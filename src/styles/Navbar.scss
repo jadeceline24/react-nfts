@@ -1,0 +1,120 @@
+@use './Variables/' as *;
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 3rem 0 6rem;
+    position: relative;
+    
+    .logo{
+        cursor: pointer;
+    }
+    .menu{
+        display: flex;
+        gap: 1rem;
+        
+        @include breakpoint (large){
+            display: none;
+          }
+    
+        
+    }
+    
+    
+        
+        .menu-mobile{
+            position: absolute;
+            background-color: #fff;
+            top: 8rem;
+            left: 0;
+            padding: 3rem;
+            margin: 0 auto;
+            width:clamp(50%, 700px, 100%);
+            transition: all .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                li{
+                    display: flex;
+                    justify-content: center;
+                    padding: 0.8rem;
+                }
+              li > a{
+              color: $text-color2;
+              font-size: $font-size-lg;
+              
+              
+              }
+              @media (min-width: 961px){
+                display: none;
+            }
+            @include breakpoint(large){
+                display: block;
+            }
+              
+          }
+          
+        
+      
+
+    .connect{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        
+        .mobile{
+           
+                .open{
+                    
+                    span {
+                        height: 1.5px;
+                        width: 25px;
+                        background: $text-color;
+                        margin: 5px;
+                        margin-left: 1rem;
+                        display: none;
+                        cursor: pointer;
+                        transition: .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        @include breakpoint (large){
+                            display: block;
+                        }
+                    }
+                }
+                .close{
+                        
+                    span {
+                        height: 1.5px;
+                        width: 25px;
+                        background: $text-color;
+                        margin-left: 1rem;
+                        display: none;
+                        cursor: pointer;
+                        transition: .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        @include breakpoint (large){
+                            display: block;
+                        }
+                        &:nth-child(1){
+                            transform: rotate(135deg);
+                            
+                        }
+                        &:nth-child(2){
+                            opacity: 0;
+                            margin: -1.5px;
+                        }
+                        &:nth-child(3){
+                            transform: rotate(-135deg);
+                        }
+                        
+                    }
+                    
+                }
+            
+        }
+        
+        
+    }
+    @include breakpoint (small){
+        padding: 2rem 0 2rem;
+      }
+    
+}

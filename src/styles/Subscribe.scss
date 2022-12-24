@@ -1,0 +1,85 @@
+@use './Variables/' as *;
+
+
+    .subscribe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 6rem;
+    height: 50vh;
+
+    .left{
+        flex:1;
+        font-size: $font-size-xl;
+        max-width: 500px;
+        @include breakpoint (medium){
+            flex-basis: 100%;
+          }
+    }
+    .right{
+        flex:1;
+        font-size: $font-size-xl;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .sub{
+            & > input{
+                color: $text-color;
+                background-color: transparent;
+                border: 2px solid $text-color3;
+                padding: 0.8rem 3rem;
+                border-radius: 50px;
+                &::placeholder{
+                    color: $text-color;
+                }
+                
+                @include breakpoint (large){
+                  padding: 0.8rem 1rem;
+                }
+            }
+            
+        }
+        .btn{
+            padding: 0.8rem 1rem;
+            margin-left: 0.5rem;
+        }
+        @include breakpoint (medium){
+            flex-basis: 100%;
+            flex-direction: column-reverse;
+          }
+    }
+    @include breakpoint (medium){
+        flex-flow: row wrap;
+        padding: 2rem 6rem;
+        
+      }
+    @include breakpoint (small){
+        padding: 2rem 2rem;
+      }
+}
+
+.company{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 6rem;
+    background-color: $text-color;
+    .wrap{
+       flex:1;
+       @include breakpoint (medium){
+        
+        padding: 0 6rem;
+        
+      }
+    }
+    @include breakpoint (medium){
+        flex-direction: column;
+        padding: 2rem 6rem;
+        
+      }
+    @include breakpoint (small){
+        padding: 1rem 2rem;
+      }
+}

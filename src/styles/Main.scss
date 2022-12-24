@@ -1,0 +1,127 @@
+@use './Variables/' as *;
+
+.main{
+  
+    .main-wrap{
+        display: flex;
+        padding: 1rem 6rem;
+        padding-bottom: 4rem;
+        position: relative;
+        
+        .main-left{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex:1;
+            .subtitle{
+              z-index: -1;
+                .sub-wrap{
+                    display: flex;
+                    gap: 0.5rem;
+                    .sublogo{
+                        height: 15px;
+                    }
+                    @include breakpoint (medium){
+                        justify-content: center;
+                      }
+                }
+
+                
+            }
+            .title{
+                z-index: -1;
+                 font-size: $font-size-lg;
+                 max-width: 450px;
+                 @include breakpoint (medium){
+                    max-width: 100%;
+                  }
+                
+             }
+             .desc{
+                font-size: $font-size-base;
+                max-width: 450px;
+                line-height: 1.5;
+                @include breakpoint (medium){
+                    max-width: 100%;
+                  }
+             }
+             
+             @include breakpoint (medium){
+                padding-top: 3rem;
+                flex-basis: 100%;
+                text-align: center;
+              }
+        }
+        .main-right{
+            flex:1;
+            display: flex;
+            flex-wrap: wrap;
+
+            .main-vid{
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                z-index: -2;
+                @include breakpoint (large){
+                    right: -50%;
+                  }
+                  @include breakpoint (medium){
+                    position: relative;
+                  }
+            }
+            .holo{
+                display: flex;
+                justify-content: center;
+                align-self: end;
+                gap: 1rem;
+                background-color: $text-color;
+                color: $text-color2;
+                padding: 1rem 0;
+                border-radius: 15px;
+                width: 350px;
+                margin-bottom: -3rem;
+                margin-left: 8rem;
+                z-index: -1;
+                .holo-title{
+                    & h3:nth-child(1){
+                        padding-bottom: 0.5rem;
+                    }
+                }
+                .holo-desc{
+                    & h3:nth-child(1){
+                        padding-bottom: 0.5rem;
+                    }
+                    .sublogo{
+                        height: 13px;
+                    }
+                }
+
+                @include breakpoint (large){
+                    margin-left: 0;
+                    
+                  }
+                  @include breakpoint (medium){
+                    margin-bottom: 0;
+                    order: -1;
+                    margin: 0 auto;
+                  }
+                 
+
+            }
+            @include breakpoint (medium){
+                order: -1;
+                flex-basis: 100%;
+              }
+        }
+
+
+        @include breakpoint (medium){ 
+            padding-bottom: 0rem;
+            flex-flow: row wrap;
+          }
+          @include breakpoint (small){
+            padding: 1rem 2rem;
+          }
+
+    }
+}

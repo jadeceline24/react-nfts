@@ -1,0 +1,64 @@
+@use './Variables/' as *;
+
+.art{
+    padding: 6rem;
+    border: 10px solid $text-color3;
+    .title{
+       text-align: center;
+        font-size: $font-size-xxl;
+        padding-bottom: 5rem;
+    }
+    .artist-wrap{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(2, 1fr) ;
+        gap: 1rem 0;
+        .artist{
+           display: flex;
+           align-items: center;
+           overflow: hidden;
+           gap: 2rem;
+            .image{
+                
+                .image-wrap{
+                    width: 150px;
+                    height: 150px;
+                    border: 2px solid $text-color3;
+                border-radius: 50%;
+                overflow: hidden;
+                    
+                    
+                }
+            }
+            .artist-name{
+               
+                cursor: pointer;
+                & > h3 {
+                    padding-bottom: 0.8rem;
+                    font-size: $font-size-md;
+                }
+                .sublogo{
+                    height: 13px;
+                }
+            }
+            @include breakpoint (small){
+                flex-direction: column;
+                text-align: center;
+              }
+        }
+    }
+    .view{
+        display: flex;
+        justify-content: end;
+        font-size: $font-size-xl;
+        text-decoration: underline;
+        cursor: pointer;
+        padding-top: 5rem;
+        @include breakpoint (medium){
+            justify-content: center;
+          }
+    }
+    @include breakpoint (small){
+        padding: 3rem 2rem;
+      }
+}

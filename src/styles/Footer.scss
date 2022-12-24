@@ -1,0 +1,75 @@
+@use './Variables/' as *;
+
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 6rem 6rem 1rem 6rem;
+    .wrap{
+        display: flex;
+        padding-bottom: 6rem;
+        .logo{
+            width: 30%;
+            @include breakpoint (medium){
+                width: 100%;
+                text-align: center;
+               
+              }
+        }
+        
+    .menu{
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+        .menu-wrap{
+            .title{
+                font-size: $font-size-md;
+                padding-bottom: 1rem;
+                cursor: pointer;
+            }
+            .desc-wrap{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        @include breakpoint (medium){
+            
+            text-align: center;
+            flex-basis: 100%;
+            width: 100%;
+            gap: 1rem;
+            column: 2;
+        padding-top: 2rem;
+            
+          }
+          @include breakpoint (small){
+            
+            flex-wrap:wrap
+             
+           }
+          
+    }
+    @include breakpoint (medium){
+        flex-flow: row wrap;
+      }
+      
+    }
+    .copyright{
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint (small){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            
+          }
+    }
+
+    
+      @include breakpoint (small){
+        padding: 3rem 2rem 1rem 2rem;
+        
+      }
+}
